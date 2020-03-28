@@ -9,7 +9,7 @@ session = GoogleDrive::Session.from_service_account_key("client_secret.json")
 # if using sheets name
 spreadsheet = session.spreadsheet_by_title("PGH COVID Data")
 # get the first worksheet with name
-worksheet = spreadsheet.worksheets.detect {|ws| ws.title == "Sheet5" }
+worksheet = spreadsheet.worksheets.detect {|ws| ws.title == "ADMISSION DATA" }
 
 # get row and print
 worksheet.rows.first(10).each { |row| puts row.first(12).join("\t|\t") }
